@@ -1,6 +1,7 @@
 ---
 redirect_from: /docs/3-index-pages.html
 ---
+
 # Customizing the Index Page
 
 Filtering and listing resources is one of the most important tasks for
@@ -109,10 +110,12 @@ To override options for string or numeric filter pass `filters` option.
   filter :title, filters: [:starts_with, :ends_with]
 ```
 
-Also, if you don't need the select with the options 'contains', 'equals', 'starts_with' or 'ends_with'
-just add the option to the filter name with an underscore.
+Also, if you don't need the select with the options 'contains', 'equals',
+'starts_with' or 'ends_with' just add the option to the filter name with an
+underscore.
 
 For example:
+
 ```ruby
 filter :name_equals
 # or
@@ -128,8 +131,10 @@ filter :author, label: 'Something else'
 By default, Active Admin will try to use ActiveModel I18n to determine the label.
 
 You can also filter on more than one attribute of a model using the
-[Ransack search predicate syntax](https://github.com/activerecord-hackery/ransack/wiki/Basic-Searching). If using a custom search method, you will
-also need to specify the field type using `:as` and the label.
+[Ransack search predicate
+syntax](https://github.com/activerecord-hackery/ransack/wiki/Basic-Searching).
+If using a custom search method, you will also need to specify the field type
+using `:as` and the label.
 
 ```ruby
 filter :first_name_or_last_name_cont, as: :string, label: "Name"
@@ -288,6 +293,9 @@ ActiveAdmin.setup do |config|
 end
 ```
 
-Note: you have to actually implement PDF rendering for your action, ActiveAdmin does not provide this feature. This setting just allows you to specify formats that you want to show up under the index collection.
+Note: you have to actually implement PDF rendering for your action, ActiveAdmin
+does not provide this feature. This setting just allows you to specify formats
+that you want to show up under the index collection.
 
-You'll need to use a PDF rendering library like PDFKit or WickedPDF to get the PDF generation you want.
+You'll need to use a PDF rendering library like PDFKit or WickedPDF to get the
+PDF generation you want.

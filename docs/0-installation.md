@@ -1,6 +1,7 @@
 ---
 redirect_from: /docs/0-installation.html
 ---
+
 # Installation
 
 Active Admin is a Ruby Gem.
@@ -23,16 +24,19 @@ that can be injected into your existing Ruby on Rails application.
 After installing the gem, you need to run the generator. Here are your options:
 
 - If you don't want to use Devise, run it with `--skip-users`:
+
   ```sh
   rails g active_admin:install --skip-users
   ```
 
 - If you want to use an existing user class, provide it as an argument:
+
   ```sh
   rails g active_admin:install User
   ```
 
 - Otherwise, with no arguments we will create an `AdminUser` class to use with Devise:
+
   ```sh
   rails g active_admin:install
   ```
@@ -56,8 +60,8 @@ rails server
 
 Visit `http://localhost:3000/admin` and log in as the default user:
 
-* __User__: admin@example.com
-* __Password__: password
+- *User*: admin@example.com
+- *Password*: password
 
 Voila! You're on your brand new Active Admin dashboard.
 
@@ -67,7 +71,8 @@ To register an existing model with Active Admin:
 rails generate active_admin:resource MyModel
 ```
 
-This creates a file at `app/admin/my_model.rb` to set up the UI; refresh your browser to see it.
+This creates a file at `app/admin/my_model.rb` to set up the UI; refresh your
+browser to see it.
 
 # Upgrading
 
@@ -81,8 +86,8 @@ rails generate active_admin:assets
 
 You should also sync these files with their counterparts in the AA source code:
 
-* app/admin/dashboard.rb [~>][dashboard.rb]
-* config/initializers/active_admin.rb [~>][active_admin.rb]
+- app/admin/dashboard.rb [~>][dashboard.rb]
+- config/initializers/active_admin.rb [~>][active_admin.rb]
 
 # Gem compatibility
 
@@ -98,8 +103,8 @@ Kaminari.configure do |config|
 end
 ```
 
-If you are also using [Draper](https://github.com/drapergem/draper), you may want to
-make sure `per_page_kaminari` is delegated correctly:
+If you are also using [Draper](https://github.com/drapergem/draper), you may
+want to make sure `per_page_kaminari` is delegated correctly:
 
 ```ruby
 Draper::CollectionDecorator.send :delegate, :per_page_kaminari

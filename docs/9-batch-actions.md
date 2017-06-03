@@ -1,6 +1,7 @@
 ---
 redirect_from: /docs/9-batch-actions.html
 ---
+
 # Batch Actions
 
 By default, the index page provides you a "Batch Action" to quickly delete records,
@@ -39,7 +40,6 @@ You can disable batch actions at the application, namespace, or resource level:
 ```ruby
 # config/initializers/active_admin.rb
 ActiveAdmin.setup do |config|
-
   # Application level:
   config.batch_actions = false
 
@@ -51,7 +51,6 @@ end
 
 # app/admin/post.rb
 ActiveAdmin.register Post do
-  
   # Resource level:
   config.batch_actions = false
 end
@@ -153,7 +152,8 @@ batch_action :doit, form: -> { {user: User.pluck(:name, :id)} } do |ids, inputs|
 end
 ```
 
-Under the covers this is powered by the JS `ActiveAdmin.modal_dialog` which you can use yourself:
+Under the covers this is powered by the JS `ActiveAdmin.modal_dialog` which you
+can use yourself:
 
 ```coffee
 if $('body.admin_users').length
